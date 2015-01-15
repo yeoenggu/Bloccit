@@ -60,4 +60,4 @@ end
 #Devise gem for user authentication
 gem 'devise'
 
-
+gem 'figaro', '1.0'

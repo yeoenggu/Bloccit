@@ -57,3 +57,7 @@ group :production do
   gem 'rails_12factor'
 end
 
+#Devise gem for user authentication
+gem 'devise'
+
+

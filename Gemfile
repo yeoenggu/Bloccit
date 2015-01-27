@@ -72,3 +72,6 @@ gem 'mini_magick'
 
 # Fog for S3
 gem 'fog'
+
+# will_paginate Gem
+gem 'will_paginate', '~> 3.0.5'

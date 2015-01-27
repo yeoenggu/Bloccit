@@ -65,3 +65,10 @@ gem 'pundit'
 
 # Red Carpet Markdown gem
 gem 'redcarpet'
+
+# Gems for uploading images and manipulating images
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Fog for S3
+gem 'fog'

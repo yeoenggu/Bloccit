@@ -4,7 +4,6 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])  
     @comments = @post.comments
-    @comment = @comments.build
   end
 
   def new
@@ -48,6 +47,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @post = Post.find(params[:id])
+    authorize @post
+
+    if @post.destroy
+      flash[:notice] = "Comment deleted..."
+      redirect_to @topic
+    else
+      flash[:error] = "Error in deleting comment..."
+      render :show
+    end    
+  end
+  
   #############
   private
 

@@ -43,6 +43,20 @@ class TopicsController < ApplicationController
     end
   end
 
+  def destroy
+    @topic = Topic.find(params[:id])
+    name = @topic.name
+    authorize @topic
+    
+    if @topic.destroy
+      flash[:notice] = "Topic \"#{name} \" was successfully created."
+      redirect_to action: :index
+    else
+      flash[:error] = "Error in destroying \"#{name}\""
+      render :show
+    end
+  end
+
   #########
   private
 

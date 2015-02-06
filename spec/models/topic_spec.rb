@@ -1,12 +1,12 @@
 describe Topic do
   before do
-    @publc_topic = Topic.create
+    @public_topic = Topic.create
     @private_topic = Topic.create(public: false)
   end
 
   describe "publicly_viewable" do
     it "returns a relation of all public topics" do
-      expect(Topic.publicly_viewable).to eq([@publc_topic])
+      expect(Topic.publicly_viewable).to eq([@public_topic])
     end
   end
 

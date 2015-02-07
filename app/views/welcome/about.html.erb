@@ -1,2 +1,4 @@
 <h1>Welcome#about</h1>
-<p>Created by:<%= my_name %></p>
+<% if current_user %>
+  <p>Created by:<%= current_user.name %></p>
+<% end %>

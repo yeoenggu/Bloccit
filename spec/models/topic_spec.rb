@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe Topic do
   before do
     @public_topic = Topic.create

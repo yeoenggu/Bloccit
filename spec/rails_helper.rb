@@ -51,5 +51,5 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   # Make Factory Girl's methods available
-  config.include FactoryGirl::Syntyax::Methods
+  config.include FactoryGirl::Syntax::Methods
 end

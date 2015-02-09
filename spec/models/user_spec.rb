@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 describe User do
-  include TestFactories
-  
   describe "#favorited(post)" do
     before do 
-      @user = authenticated_user
-      @post = associated_post
+      @user = create(:user)
+      @post = create(:post, user: @user)
     end
 
     it "returns 'nil' if the user has not favorited the post" do 
@@ -28,11 +26,11 @@ describe User do
 
       @user2 = create(:user)
       post = create(:post, user: @user2)
-      create(:comment, user: @user2, post: post)
+      2.times { create(:comment, user: @user2, post: post) }
     end
 
     it "returns users ordered by comments + posts" do
-      expect( User.top_rated ).to eq([@user1, @user2])
+      expect( User.top_rated ).to eq([@user2, @user1])
     end
 
     it "stores a 'posts_count' on user" do
